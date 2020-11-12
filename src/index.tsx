@@ -1,4 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-ReactDOM.render(<div>lets do a reaload</div>, document.getElementById("App"));
+const App = () => {
+  console.log("sss");
+  return <div>fastt referesh</div>;
+};
+ReactDOM.render(<App />, document.getElementById("App"));

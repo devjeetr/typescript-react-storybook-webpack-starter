@@ -1,6 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const webpack = require("webpack");
+const isDevelopment = process.env.NODE_ENV !== "production";
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -16,13 +19,25 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
-        loader: "ts-loader",
+        test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
-        options: {
-          // disable type checker - we will use it in fork plugin
-          transpileOnly: true,
-        },
+        use: [
+          {
+            loader: require.resolve("babel-loader"),
+            options: {
+              plugins: [
+                isDevelopment && require.resolve("react-refresh/babel"),
+              ].filter(Boolean),
+            },
+          },
+          {
+            loader: "ts-loader",
+            options: {
+              // disable type checker - we will use it in fork plugin
+              transpileOnly: true,
+            },
+          },
+        ],
       },
       {
         enforce: "pre",
@@ -44,5 +59,7 @@ module.exports = {
       title: "typescript-starter",
       template: path.resolve(__dirname, "src/index.html"),
     }),
-  ],
+    isDevelopment && new webpack.HotModuleReplacementPlugin(),
+    isDevelopment && new ReactRefreshWebpackPlugin(),
+  ].filter(Boolean),
 };

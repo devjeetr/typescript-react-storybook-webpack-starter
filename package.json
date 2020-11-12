@@ -6,15 +6,17 @@
   "author": "Devjeet Roy",
   "license": "MIT",
   "scripts": {
-    "start": "yarn webpack serve",
+    "start": "yarn webpack serve --mode development --config webpack.config.js",
     "build": "yarn webpack"
   },
   "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
     "awesome-typescript-loader": "^5.2.1",
     "fork-ts-checker-webpack-plugin": "^6.0.1",
     "html-webpack-plugin": "^4.5.0",
+    "react-refresh": "^0.9.0",
     "source-map-loader": "^1.1.2",
     "ts-loader": "^8.0.11",
     "typescript": "^4.0.5",
@@ -23,6 +25,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@babel/core": "^7.12.3",
+    "babel-loader": "^8.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
