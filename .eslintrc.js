@@ -17,6 +17,7 @@ module.exports = {
     'prettier',
     'plugin:prettier/recommended',
     'plugin:react-hooks/recommended',
+    'prettier/react',
   ],
   rules: {
     // place to specify ESLint rules - can be used to overwrite rules specified from the extended configs
@@ -24,5 +25,6 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 'off',
+    'prettier/prettier': 'warn',
   },
 };
