@@ -1,12 +1,28 @@
 module.exports = {
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: "module",
+
+    sourceType: 'module',
   },
-  extends: ["plugin:@typescript-eslint/recommended"],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  extends: [
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'prettier',
+    'plugin:prettier/recommended',
+    'plugin:react-hooks/recommended',
+  ],
   rules: {
     // place to specify ESLint rules - can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'react/prop-types': 'off',
   },
 };
