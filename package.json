@@ -1,0 +1,29 @@
+{
+  "name": "ts-react-starter",
+  "version": "1.0.0",
+  "description": "A simple starter for typescript & react using webpack.",
+  "main": "index.js",
+  "author": "Devjeet Roy",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn webpack serve",
+    "build": "yarn webpack"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "awesome-typescript-loader": "^5.2.1",
+    "fork-ts-checker-webpack-plugin": "^6.0.1",
+    "html-webpack-plugin": "^4.5.0",
+    "source-map-loader": "^1.1.2",
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.0.5",
+    "webpack": "4",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
