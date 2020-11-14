@@ -26,5 +26,8 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/prop-types': 'off',
     'prettier/prettier': 'warn',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/ban-types': 'off',
+    'react/jsx-key': 'warn',
   },
 };

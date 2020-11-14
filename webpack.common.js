@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
 module.exports = {
   entry: './src/index.tsx',
   target: 'web',
@@ -9,6 +11,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
+    plugins: [new TsconfigPathsPlugin()],
   },
   module: {
     rules: [
