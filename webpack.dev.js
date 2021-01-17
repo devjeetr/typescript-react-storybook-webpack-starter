@@ -73,5 +73,4 @@ const generateConfig = (config) => {
 };
 
 const finalConfig = generateConfig(commonConfig);
-console.log(finalConfig.module.rules[0].use);
 module.exports = finalConfig;

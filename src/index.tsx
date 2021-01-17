@@ -7,7 +7,7 @@ const App = ({ name }: { name: string }) => {
     if (name) setState(true);
   }, [name]);
 
-  return <div>React Typept Starter</div>;
+  return <div>React Typescript Starter</div>;
 };
 
 ReactDOM.render(<App name="Unknown" />, document.getElementById('App'));
